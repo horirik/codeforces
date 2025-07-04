@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        int k = scan.nextInt();
+        scan.close();
+
+        int r = n, l = 0, sloved = 0;
+        while (l <= r) {
+            int temp_sloved = l + (r - l) / 2;
+            if (5 * temp_sloved * (temp_sloved + 1) / 2 <= 240 - k) {
+                sloved = temp_sloved;
+                l = temp_sloved + 1;
+            }
+            else {
+                r = temp_sloved - 1;
+            }
+        }
+        System.out.println(sloved);
+    }
+}
