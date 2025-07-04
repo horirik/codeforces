@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int t = scan.nextInt();
+
+        while (t-- > 0) {
+            int n = scan.nextInt();
+            long sum = 0;
+            while (n-- > 0) {
+                int a = scan.nextInt();
+                sum += a;
+            }
+            if (sqrt(sum)) System.out.println("YES");
+            else System.out.println("NO");
+        }
+    }
+
+    public static boolean sqrt(long x) {
+        long l = 1;
+        long r = (long) 1e9;
+        long mid;
+        while (l <= r) {
+            mid = l + (r - l) / 2;
+            long sq = mid * mid;
+            if (sq == x) return true;
+            if (sq < x) l = mid + 1;
+            else r = mid - 1;
+        }
+        return false;
+    }
+}
