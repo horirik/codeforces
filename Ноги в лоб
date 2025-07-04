@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int t = scan.nextInt();
+        int[] farm = new int[t];
+        for (int i = 0; i < t; i++) {
+            farm[i] = scan.nextInt();
+        }
+        scan.close();
+
+        for (int i = 0; i < t; i++) {
+            int culc = 0;
+            int animal = farm[i];
+            while (animal != 0) {
+                if (animal % 4 != 0) {
+                    animal -= 2;
+                    culc++;
+                }
+                else {
+                    animal -= 4;
+                    culc++;
+                }
+            }
+            System.out.println(culc);
+        }
+    }
+}
