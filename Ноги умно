@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int t = scan.nextInt();
+        int[] farm = new int[t];
+        for (int i = 0; i < t; i++) {
+            farm[i] = scan.nextInt();
+        }
+        scan.close();
+
+        for (int i = 0; i < t; i++) {
+            int animal = farm[i] / 4 + (farm[i] % 4 == 0 ? 0 : 1);
+            System.out.println(animal);
+        }
+    }
+}
